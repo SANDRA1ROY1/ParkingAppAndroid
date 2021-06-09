@@ -2,11 +2,11 @@
     <string name="app_name">ParkingAppAndroid</string>
 
 
-        <string-array name="hrs_array">
-            <item>less than 1 hour</item>
-            <item>4 hours</item>
-            <item>12 hours</item>
-            <item>24 hours</item>
-        </string-array>
+    <string-array name="hrs_array">
+        <item>less than 1 hour</item>
+        <item>4 hours</item>
+        <item>12 hours</item>
+        <item>24 hours</item>
+    </string-array>
 
 </resources>
