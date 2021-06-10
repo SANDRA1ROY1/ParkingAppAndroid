@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+
+    android:gravity="center"
+    android:padding="55dp"
+    tools:context=".Sign_up_page">
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="141dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:background="@android:color/holo_blue_bright"
+        android:gravity="center"
+        android:text="Sign up "
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="28dp" />
+
+    <EditText
+        android:id="@+id/u_name"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/u_email"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Enter Email id"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/u_phone_num"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:ems="10"
+        android:gravity="center"
+
+        android:hint="Enter Phone Number"
+        android:inputType="phone" />
+
+
+    <EditText
+        android:id="@+id/u_car_plate_num"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:ems="10"
+
+        android:gravity="center"
+        android:hint="Car plate Number"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/u_pass_word"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:ems="10"
+
+        android:gravity="center"
+        android:hint="password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/home_btn"
+        android:layout_width="164dp"
+        android:layout_height="71dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:text="Sign In"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="28dp" />
+</LinearLayout>
