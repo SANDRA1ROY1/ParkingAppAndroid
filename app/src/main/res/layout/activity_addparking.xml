@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddParkingActivity">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="30dp"
+    android:text="Add Parking"
+    android:textSize="30sp"
+    android:textColor="#37605F"
+    android:textStyle="bold"
+    android:textAlignment="center"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    />
+    <ImageView
+        android:id="@+id/img_lic"
+        android:src="@drawable/ic_car"
+        android:layout_width="30dp"
+         android:layout_height="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="110dp"/>
+   <EditText
+       android:id="@+id/ed_licensePlate"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginBottom="50dp"
+       android:layout_marginStart="25dp"
+       android:layout_marginEnd="25dp"
+       android:layout_marginTop="100dp"
+       android:hint="Enter License Plate Number"
+        android:textAlignment="center"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toEndOf="@+id/img_lic"
+       app:layout_constraintTop_toTopOf="parent"
+       android:background="@drawable/background"/>
+    <ImageView
+        android:id="@+id/img_build"
+        android:src="@drawable/ic_home"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_height="30dp"
+        android:layout_width="30dp"
+        app:layout_constraintTop_toBottomOf="@id/ed_licensePlate"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/ed_buildingCode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:hint="Enter building code"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img_build"
+        app:layout_constraintTop_toBottomOf="@id/ed_licensePlate"
+        android:background="@drawable/background"/>
+
+    <ImageView
+        android:id="@+id/img_suit"
+        android:src="@drawable/ic_baseline_add_24"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_height="30dp"
+        android:layout_width="30dp"
+        app:layout_constraintTop_toBottomOf="@id/ed_buildingCode"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <EditText
+        android:id="@+id/ed_suitNo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:hint="Enter Suite Number"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img_suit"
+        app:layout_constraintTop_toBottomOf="@id/ed_buildingCode"
+        android:background="@drawable/background"/>
+
+    <ImageView
+        android:id="@+id/img_hrs"
+        android:src="@drawable/ic_hrs"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_height="30dp"
+        android:layout_width="30dp"
+        app:layout_constraintTop_toBottomOf="@id/ed_suitNo"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <Spinner
+        android:id="@+id/sp_hrs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:hint="Enter number of hours"
+        android:textAlignment="center"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img_hrs"
+        app:layout_constraintTop_toBottomOf="@id/ed_suitNo"/>
+
+
+    <ImageView
+        android:id="@+id/img_date"
+        android:src="@drawable/ic_date"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_height="30dp"
+        android:layout_width="30dp"
+        app:layout_constraintTop_toBottomOf="@id/sp_hrs"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_Date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:hint="Date will appear here"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img_date"
+        app:layout_constraintTop_toBottomOf="@id/sp_hrs"
+        android:background="@drawable/background"/>
+
+
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:hint="Date will appear here"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ch_location"
+        app:layout_constraintTop_toBottomOf="@id/tv_Date"
+        android:background="@drawable/background"/>
+
+ <CheckBox
+     android:id="@+id/ch_location"
+     android:text="current location"
+     android:checked="true"
+     android:layout_marginBottom="50dp"
+     android:layout_marginTop="50dp"
+     android:layout_marginStart="25dp"
+     android:layout_marginEnd="25dp"
+     android:layout_height="wrap_content"
+     android:layout_width="wrap_content"
+     app:layout_constraintTop_toBottomOf="@id/tv_Date"
+     app:layout_constraintStart_toStartOf="parent"
+     />
+
+
+   <!-- <Button
+        android:id="@+id/btn_saveParking"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Save Parking"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_Date"
+
+        /> -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
