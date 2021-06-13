@@ -13,12 +13,12 @@
 
     <TextView
         android:id="@+id/tv3"
-        android:layout_width="141dp"
-        android:layout_height="55dp"
+        android:layout_width="296dp"
+        android:layout_height="71dp"
         android:layout_gravity="center"
         android:background="@android:color/holo_blue_bright"
         android:gravity="center"
-        android:text="Sign up "
+        android:text="Sign up Form"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="28dp" />
@@ -75,19 +75,27 @@
         android:layout_height="71dp"
         android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
         android:ems="10"
-
         android:gravity="center"
         android:hint="password"
         android:inputType="textPassword" />
-
+    <EditText
+        android:id="@+id/u_pass_word_check"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Enter ur password again"
+        android:inputType="textPassword" />
     <Button
-        android:id="@+id/home_btn"
+        android:id="@+id/Register_btn"
         android:layout_width="164dp"
         android:layout_height="71dp"
         android:layout_gravity="center"
         android:backgroundTint="@color/white"
         android:gravity="center"
-        android:text="Sign In"
+        android:text="Sign Up"
         android:textColor="@android:color/holo_blue_bright"
         android:textSize="28dp" />
+
 </LinearLayout>
