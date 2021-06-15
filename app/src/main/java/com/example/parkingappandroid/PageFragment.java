@@ -443,6 +443,7 @@ public class PageFragment extends Fragment {
         Toast toast;
         if(!isParkingExist) {
             pViewModel.addParking(p);
+            pViewModel.getAllParkings(user);
           toast  = Toast.makeText(getContext(), "Data saved successfully", Toast.LENGTH_SHORT);
 
         }else{
