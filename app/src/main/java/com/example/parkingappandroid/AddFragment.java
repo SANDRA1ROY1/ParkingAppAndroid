@@ -19,7 +19,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 
 import com.example.parkingappandroid.viewmodel.ParkingViewModel;
@@ -38,10 +37,10 @@ import com.example.parkingappandroid.Helpers.LocationHelper;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link PageFragment#newInstance} factory method to
+ * Use the {@link AddFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PageFragment extends Fragment {
+public class AddFragment extends Fragment {
     FragmentPageBinding binding;
 
 
@@ -75,11 +74,11 @@ public class PageFragment extends Fragment {
     // TODO: Rename and change types of parameters
 
 
-    public static PageFragment newInstance(int page) {
+    public static AddFragment newInstance(int page) {
         // Required empty public constructor
         Bundle args=new Bundle();
         args.putInt(ARG_PAage,page);
-        PageFragment fragment=new PageFragment();
+        AddFragment fragment=new AddFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -316,10 +315,16 @@ public class PageFragment extends Fragment {
 
 
     private void setDate() {
-
+        currentTime = Calendar.getInstance().getTime();
         String time=currentTime.toString();
         this.binding.tvDate.setText(time);
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        setDate();
     }
 
     private void setSpinnerForHours(Context context) {
@@ -357,6 +362,7 @@ public class PageFragment extends Fragment {
         binding.edBuildingCode.setText("");
         binding.edSuitNo.setText("");
         binding.edLicensePlate.setText("");
+        setDate();
         binding.chLocation.setChecked(true);
 
     }

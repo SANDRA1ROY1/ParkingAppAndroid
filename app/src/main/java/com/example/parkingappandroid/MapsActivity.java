@@ -45,6 +45,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         this.currentLocation=new LatLng(this.getIntent().getDoubleExtra("EXTRA_LAT",0)
                 ,this.getIntent().getDoubleExtra("EXTRA_LNG",0));
 
+        Log.d("TAG","maps loaction "+currentLocation.toString());
+
 
         this.locationHelper=LocationHelper.getInstance();
         this.locationHelper.checkpermissions(this);
@@ -63,7 +65,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     return;
                 }
                 for(Location loc: locationResult.getLocations()){
-                    currentLocation=new LatLng(loc.getLatitude(),loc.getLongitude());
+                   // currentLocation=new LatLng(loc.getLatitude(),loc.getLongitude());
 
                     //update map with location
 
@@ -96,9 +98,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        //LatLng sydney = new LatLng(, 151);
+      //  mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+      //  mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 
 
@@ -111,8 +113,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         UiSettings myUIsettings=googleMap.getUiSettings();
         myUIsettings.setZoomControlsEnabled(true);
         myUIsettings.setZoomGesturesEnabled(true);
-        myUIsettings.setScrollGesturesEnabled(false);
+
         myUIsettings.setRotateGesturesEnabled(true);
+
+
+        googleMap.addMarker(new MarkerOptions().position(currentLocation).title("Parking Location"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(currentLocation));
     }
 
     @Override

@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -23,10 +22,10 @@ import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link BlankFragment#newInstance} factory method to
+ * Use the {@link ListFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BlankFragment extends Fragment{
+public class ListFragment extends Fragment{
     FragmentBlankBinding binding;
     ArrayList<Parking> parkingArrayList=new ArrayList<>();
     ParkingAdapter adapter;
@@ -41,7 +40,7 @@ public class BlankFragment extends Fragment{
     private String mParam1;
     private String user="";
 
-    public BlankFragment() {
+    public ListFragment() {
         // Required empty public constructor
     }
 
@@ -54,8 +53,8 @@ public class BlankFragment extends Fragment{
      * @return A new instance of fragment BlankFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static BlankFragment newInstance(String param1) {
-        BlankFragment fragment = new BlankFragment();
+    public static ListFragment newInstance(String param1) {
+        ListFragment fragment = new ListFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
 

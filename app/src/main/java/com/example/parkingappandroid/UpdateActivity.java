@@ -32,7 +32,7 @@ public class UpdateActivity extends AppCompatActivity {
 
 
     ActivityUpdateBinding binding;
-
+    private static final Pattern hrsPattern = Pattern.compile("(1|4|12|24)");
     private static final Pattern carPlatePattern = Pattern.compile("^" + "[0-9a-zA-Z]{2,8}" + "$");
     private static final Pattern buldingCodePattern = Pattern.compile("^" + "[0-9a-zA-Z]{5}" + "$");
     private static final Pattern suitNoPattern = Pattern.compile("^" + "[0-9a-zA-Z]{2,5}" + "$");
@@ -76,13 +76,25 @@ public class UpdateActivity extends AppCompatActivity {
                    if(adapterPosition<0){
                        adapterPosition=0;
                    }
-                   currentParking=parkings.get(adapterPosition);
+
+                    try {
+                        currentParking = parkings.get(adapterPosition);
+                    }catch(Exception e){
+                        currentParking=parkings.get(adapterPosition-1);
+                    }
                    binding.edBuildingCode.setText(currentParking.getBuildingCode());
                    binding.edLicensePlate.setText(currentParking.getCarPlateNo());
                    binding.edSuitNo.setText(currentParking.getSuiteNo());
                    binding.tvDate.setText(String.valueOf(currentParking.getDate()));
                    binding.tvLocation.setText(currentParking.getStreetAddr());
                    binding.spHrs.setText(String.valueOf(currentParking.getHrs()));
+
+                   if(addressloc != null) {
+                       addressloc.setLatitude(currentParking.getLat());
+                       addressloc.setLongitude(currentParking.getLng());
+                   }else{
+                       Log.d("TAG","addressloc is null");
+                   }
                }
            }
        });
@@ -102,15 +114,31 @@ public class UpdateActivity extends AppCompatActivity {
     binding.btnUpdateParking.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            currentParking.setBuildingCode(binding.edBuildingCode.getText().toString());
-            currentParking.setCarPlateNo(binding.edLicensePlate.getText().toString());
-            currentParking.setSuiteNo(binding.edSuitNo.getText().toString());
 
-            pViewModel.updateParking(currentParking);
-            pViewModel.getAllParkings(user);
-            Intent i=new Intent(getApplicationContext(),MainActivity1.class);
-            i.putExtra("toast","Parking updated successfully");
-            startActivity(i);
+            if (validate()) {
+                currentParking.setBuildingCode(binding.edBuildingCode.getText().toString());
+                currentParking.setCarPlateNo(binding.edLicensePlate.getText().toString());
+                currentParking.setSuiteNo(binding.edSuitNo.getText().toString());
+                int hrs = Integer.parseInt(binding.spHrs.getText().toString());
+                currentParking.setHrs(hrs);
+                String addressString = binding.tvLocation.getText().toString();
+                currentParking.setStreetAddr(addressString);
+                addressloc = locationHelper.getCoordinates(getApplicationContext(), addressString);
+                if (!binding.chLocation.isChecked()) {
+                    currentParking.setLat(addressloc.getLatitude());
+                    currentParking.setLng(addressloc.getLongitude());
+                } else if (binding.chLocation.isChecked()) {
+                    currentParking.setLat(lastlOCATION.getLatitude());
+                    currentParking.setLng(lastlOCATION.getLongitude());
+                }
+
+
+                pViewModel.updateParking(currentParking);
+                pViewModel.getAllParkings(user);
+                Intent i = new Intent(getApplicationContext(), MainActivity1.class);
+                i.putExtra("toast", "Parking updated successfully");
+                startActivity(i);
+            }
         }
     });
 
@@ -128,8 +156,8 @@ public class UpdateActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent mapIntent=new Intent(getApplicationContext(), MapsActivity.class);
-                mapIntent.putExtra("EXTRA_LAT",lastlOCATION.getLatitude());
-                mapIntent.putExtra("EXTRA_LNG",lastlOCATION.getLongitude());
+                mapIntent.putExtra("EXTRA_LAT",currentParking.getLat());
+                mapIntent.putExtra("EXTRA_LNG",currentParking.getLng());
                 startActivity(mapIntent);
             }
         });
@@ -287,22 +315,37 @@ public class UpdateActivity extends AppCompatActivity {
         this.locationHelper.requestLocationUpdates(this,this.locationCallback);
     }
 
-    public void validate(){
+    public boolean validate(){
         Toast toast;
         validateSuitNo();
         validateBuldingCode();
         validateCarPlateNo();
-        if(validateBuldingCode() && validateCarPlateNo() && validateSuitNo() && !binding.tvLocation.getText().toString().isEmpty()) {
+        if(validateBuldingCode() && validateCarPlateNo() && validateSuitNo() && validateHrs() && !binding.tvLocation.getText().toString().isEmpty()) {
+            return true;
 
-           // updateParkingToDB();
-           // clearFields();
         }else{
             if(binding.tvLocation.getText().toString().isEmpty()) {
                 toast = Toast.makeText(this, "Please enter correct location", Toast.LENGTH_SHORT);
                 toast.show();
+                return false;
             }
         }
+        return false;
+    }
 
+    private boolean validateHrs() {
+        Boolean isValidated = false;
+
+        String hrsText = binding.spHrs.getText().toString();
+
+        if(!hrsPattern.matcher(hrsText).matches()){
+            binding.spHrs.setError("Please provide 1,4,12 or 24");
+        }else{
+            isValidated=true;
+        }
+
+
+        return isValidated;
     }
 
     private Boolean validateBuldingCode() {
