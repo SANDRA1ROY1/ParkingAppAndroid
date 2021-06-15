@@ -357,6 +357,7 @@ public class PageFragment extends Fragment {
         binding.edBuildingCode.setText("");
         binding.edSuitNo.setText("");
         binding.edLicensePlate.setText("");
+        binding.chLocation.setChecked(true);
 
     }
 

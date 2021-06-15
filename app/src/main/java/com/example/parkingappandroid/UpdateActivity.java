@@ -3,6 +3,7 @@ package com.example.parkingappandroid;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Location;
@@ -18,11 +19,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
 import com.example.parkingappandroid.Helpers.LocationHelper;
+import com.example.parkingappandroid.Models.Parking;
 import com.example.parkingappandroid.viewmodel.ParkingViewModel;
 import com.example.parkingappandroid.databinding.ActivityUpdateBinding;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationResult;
 
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class UpdateActivity extends AppCompatActivity {
@@ -44,6 +47,11 @@ public class UpdateActivity extends AppCompatActivity {
 
     AlertDialog.Builder builder;
     Location addressloc;
+
+    int adapterPosition=0;
+    Parking currentParking=new Parking();
+
+    String user="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +59,62 @@ public class UpdateActivity extends AppCompatActivity {
         binding=ActivityUpdateBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        SharedPreferences sp=getApplicationContext().getSharedPreferences("UserPrefs",MODE_PRIVATE);
+        user=sp.getString("username",".@gmail.com");
+
         //load data from db
+        Intent i =getIntent();
+       adapterPosition= i.getIntExtra("position",0);
+       Log.d("position received",String.valueOf(adapterPosition));
+       pViewModel=ParkingViewModel.getInstance(getApplication());
+       pViewModel.getAllParkings(user);
+       this.pViewModel.allParkings.observe(this, new Observer<List<Parking>>() {
+           @Override
+           public void onChanged(List<Parking> parkings) {
+               if(parkings!= null && !parkings.isEmpty()){
+                   Log.d("parking","isEmpty");
+                   if(adapterPosition<0){
+                       adapterPosition=0;
+                   }
+                   currentParking=parkings.get(adapterPosition);
+                   binding.edBuildingCode.setText(currentParking.getBuildingCode());
+                   binding.edLicensePlate.setText(currentParking.getCarPlateNo());
+                   binding.edSuitNo.setText(currentParking.getSuiteNo());
+                   binding.tvDate.setText(String.valueOf(currentParking.getDate()));
+                   binding.tvLocation.setText(currentParking.getStreetAddr());
+                   binding.spHrs.setText(String.valueOf(currentParking.getHrs()));
+               }
+           }
+       });
+
+
+    binding.btnDeleteParking.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            pViewModel.deleteParking(currentParking.getRef());
+            pViewModel.getAllParkings(user);
+            Intent i=new Intent(getApplicationContext(),MainActivity1.class);
+            i.putExtra("toast","Parking deleted successfully");
+            startActivity(i);
+        }
+    });
+
+    binding.btnUpdateParking.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            currentParking.setBuildingCode(binding.edBuildingCode.getText().toString());
+            currentParking.setCarPlateNo(binding.edLicensePlate.getText().toString());
+            currentParking.setSuiteNo(binding.edSuitNo.getText().toString());
+
+            pViewModel.updateParking(currentParking);
+            pViewModel.getAllParkings(user);
+            Intent i=new Intent(getApplicationContext(),MainActivity1.class);
+            i.putExtra("toast","Parking updated successfully");
+            startActivity(i);
+        }
+    });
+
+
 
 
         this.locationHelper=LocationHelper.getInstance();

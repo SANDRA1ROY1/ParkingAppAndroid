@@ -1,11 +1,13 @@
 package com.example.parkingappandroid;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +31,9 @@ public String user="";
 
     SFragmentPageAdapter adapter;
 
+    String toast="";
+    AlertDialog.Builder builder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +54,17 @@ profileViewModel=ProfileViewModel.getInstance(getApplication());
         binding.slidingTabs.setupWithViewPager(binding.viewpager);
         SharedPreferences sp=getApplicationContext().getSharedPreferences("UserPrefs",MODE_PRIVATE);
         user=sp.getString("username",".@gmail.com");
+
+
+
+        Intent i = getIntent();
+       toast=i.getStringExtra("toast");
+       Log.d("Toast","tOAST- "+toast);
+       if(toast != null) {
+           if (!toast.equals("")) {
+               Toast.makeText(this, toast, Toast.LENGTH_SHORT).show();
+           }
+       }
 
 
 
