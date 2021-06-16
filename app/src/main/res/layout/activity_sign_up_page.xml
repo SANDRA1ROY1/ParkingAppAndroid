@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_weight="1"
     android:orientation="vertical"
     android:layout_gravity="center"
 
@@ -87,6 +88,7 @@
         android:gravity="center"
         android:hint="Enter ur password again"
         android:inputType="textPassword" />
+
     <Button
         android:id="@+id/Register_btn"
         android:layout_width="164dp"
@@ -95,6 +97,17 @@
         android:backgroundTint="@color/white"
         android:gravity="center"
         android:text="Sign Up"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="28dp" />
+
+    <Button
+        android:id="@+id/log"
+        android:layout_width="164dp"
+        android:layout_height="83dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:text="login now"
         android:textColor="@android:color/holo_blue_bright"
         android:textSize="28dp" />
 

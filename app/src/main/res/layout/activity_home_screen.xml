@@ -10,7 +10,7 @@
     android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
     tools:context=".Home_screen">
 
-    <TextView
+    <EditText
         android:id="@+id/textVi"
         android:layout_width="121dp"
         android:layout_height="50dp"
@@ -27,7 +27,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <TextView
+    <EditText
         android:id="@+id/textView2"
         android:layout_width="121dp"
         android:layout_height="50dp"
@@ -44,12 +44,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:id="@+id/username_tv"
+
+    <EditText
+        android:id="@+id/home_username_edt"
         android:layout_width="332dp"
         android:layout_height="48dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="200dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
         android:fontFamily="sans-serif"
@@ -57,55 +58,60 @@
         android:hint="Name"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView4"
+    <EditText
+        android:id="@+id/home_email_edt"
         android:layout_width="332dp"
         android:layout_height="48dp"
+
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="136dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:hint="Email"
+
         android:textColor="@color/black"
         android:textSize="18sp"
 
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView5"
+    <EditText
+        android:id="@+id/home_password_edt"
         android:layout_width="332dp"
         android:layout_height="48dp"
+
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="424dp"
         android:layout_marginRight="16dp"
 
         android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:hint="Password"
+
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView6"
+    <EditText
+        android:id="@+id/home_contact_edt"
         android:layout_width="332dp"
         android:layout_height="48dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="332dp"
+        android:layout_marginTop="348dp"
+
         android:layout_marginRight="16dp"
         android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
         android:fontFamily="sans-serif"
@@ -114,17 +120,18 @@
         android:textColor="@color/black"
 
         android:textSize="18sp"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView7"
+    <EditText
+        android:id="@+id/home_car_plate_edt"
         android:layout_width="332dp"
         android:layout_height="48dp"
+
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="416dp"
+        android:layout_marginTop="272dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
         android:fontFamily="sans-serif"
@@ -133,20 +140,7 @@
         android:textColor="@color/black"
         android:textSize="18sp"
 
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="122dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="508dp"
-        android:backgroundTint="@android:color/holo_blue_bright"
-        android:text="Update"
-        android:textSize="18sp"
-        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -155,13 +149,13 @@
         android:id="@+id/sign_out_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="620dp"
+        android:layout_marginTop="772dp"
         android:backgroundTint="@android:color/holo_blue_bright"
         android:text="Sign out"
         android:textColor="@color/white"
 
-        android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="0.902"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -181,27 +175,27 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/Delete_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="620dp"
-        android:backgroundTint="@android:color/holo_blue_bright"
-        android:text="Delete profile"
-
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/view_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="508dp"
         android:backgroundTint="@android:color/holo_blue_bright"
 
-        android:text="View ur profile"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:text="View profile"
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="134dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="508dp"
+        android:backgroundTint="@android:color/holo_blue_bright"
+
+        android:text="save and update"
+        app:layout_constraintHorizontal_bias="0.866"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

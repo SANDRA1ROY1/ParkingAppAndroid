@@ -13,6 +13,8 @@
         android:theme="@style/Theme.Parking_app_andr">
         <activity android:name=".Home_screen"> </activity>
         <activity android:name=".Sign_up_page"> </activity>
+        <activity android:name=".repository.Show_profile"> </activity>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

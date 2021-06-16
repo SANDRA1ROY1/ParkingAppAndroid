@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:layout_gravity="center"
+    android:layout_margin="20sp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view1"
+        android:layout_width="361dp"
+        android:layout_height="213dp"
+        android:foregroundGravity="center"
+        app:cardBackgroundColor="#2196F3"
+        android:layout_margin="13dp"
+        app:cardElevation="16dp"
+        app:contentPadding="25dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/user_name_tv"
+                android:layout_width="294dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:hint="Name"
+                android:padding="5dp"
+                android:textColor="#E3F2FD"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+
+            <TextView
+                android:id="@+id/u_email_tv"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:backgroundTint="@color/white"
+                android:hint="Email"
+                android:padding="5dp"
+
+                android:textColor="#E3F2FD"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/u_carplate_num_tv"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:padding="5dp"
+                android:backgroundTint="@color/white"
+                android:hint="car plate number"
+                android:textColor="#E3F2FD"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/u_Phone_num_tv"
+
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:backgroundTint="@color/white"
+                android:hint="Phone number"
+                android:padding="5dp"
+                android:textColor="#E3F2FD"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/u_Password_tv"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:backgroundTint="@color/white"
+                android:hint="password"
+                android:padding="5dp"
+                android:textColor="#E3F2FD"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

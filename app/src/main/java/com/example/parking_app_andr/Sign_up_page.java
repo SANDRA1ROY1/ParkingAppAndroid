@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.parking_app_andr.viewmodel.ProfileViewModel;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,12 +24,13 @@ import java.util.Map;
 import static android.text.TextUtils.isEmpty;
 
 public class Sign_up_page extends AppCompatActivity {
-    private ProfileViewModel profileViewModel;
+//    private ProfileViewModel profileViewModel;
     //firestore essentials
     FirebaseFirestore firebaseFirestore;
     DocumentReference ref;
+    private String uTitle, uDesc , uId;
 
-    Button Register_btn;
+    Button Register_btn,log;
     EditText u_name,u_email,u_phone_num,u_car_plate_num,u_pass_word,u_pass_word_check;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +45,19 @@ public class Sign_up_page extends AppCompatActivity {
         u_car_plate_num = findViewById(R.id.u_car_plate_num);
         u_pass_word = findViewById(R.id.u_pass_word);
         u_pass_word_check=findViewById(R.id.u_pass_word_check);
+        log=findViewById(R.id.log);
         //init
 
         firebaseFirestore=FirebaseFirestore.getInstance();
         ref = firebaseFirestore.collection("profile_details").document();
-
+        //calling login again
+log.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent i = new Intent(Sign_up_page.this,MainActivity.class);
+        startActivity(i);
+    }
+});
 
 //    EditText u_name,u_email,u_phone_num,u_car_plate_num,u_pass_word;
         Register_btn.setOnClickListener(new View.OnClickListener() {

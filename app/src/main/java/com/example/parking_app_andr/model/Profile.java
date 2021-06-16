@@ -8,7 +8,7 @@ public class Profile {
     private String id;
     private String name;
     private String email;
-    private String  u_phone_num;
+    private String u_phone_num;
     private String u_car_plate_num;
     private String u_pass_word;
 
@@ -72,7 +72,6 @@ public class Profile {
     @Override
     public String toString() {
         return "Profile{" +
-                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", u_phone_num='" + u_phone_num + '\'' +
