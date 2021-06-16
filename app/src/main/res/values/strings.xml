@@ -8,5 +8,6 @@
         <item>12 hours</item>
         <item>24 hours</item>
     </string-array>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

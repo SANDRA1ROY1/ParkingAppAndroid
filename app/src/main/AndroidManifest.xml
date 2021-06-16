@@ -3,6 +3,7 @@
     package="com.example.parkingappandroid">
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,8 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ParkingAppAndroid">
-        <activity android:name=".AddParkingActivity"></activity>
-        <activity android:name=".ViewParkingActivity" />
+
+<meta-data
+    android:name="com.google.android.geo.API_KEY"
+    android:value="${mapsApiKey}"/>
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps"></activity>
+        <activity android:name=".UpdateActivity" />
+        <activity android:name=".MainActivity1"/>
+        <activity android:name=".Home_screen"> </activity>
+        <activity android:name=".Sign_up_page"> </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
