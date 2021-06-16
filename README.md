@@ -9,6 +9,23 @@ Users will be able to Sign In, Sign Out and Sign Up using their credentials(emai
 Users can also update their profile information later.
 
 ![image](https://user-images.githubusercontent.com/73772928/122248628-d289a200-cee5-11eb-9ab6-f83c6130d72d.png)
+![image](https://user-images.githubusercontent.com/73772928/122248935-11b7f300-cee6-11eb-82f4-17ced3d30bd8.png)
+![image](https://user-images.githubusercontent.com/73772928/122249019-2300ff80-cee6-11eb-90ef-4009d249db91.png)
+![image](https://user-images.githubusercontent.com/73772928/122249139-37dd9300-cee6-11eb-8651-d64b5fd65f60.png)
+![image](https://user-images.githubusercontent.com/73772928/122249258-504dad80-cee6-11eb-948e-2bb8d4a64cce.png)
+![image](https://user-images.githubusercontent.com/73772928/122249339-6196ba00-cee6-11eb-967c-b2f90923026e.png)
+![image](https://user-images.githubusercontent.com/73772928/122249399-6f4c3f80-cee6-11eb-9b61-c4d69c41e805.png)
+![image](https://user-images.githubusercontent.com/73772928/122249528-8f7bfe80-cee6-11eb-9ca4-b18787863288.png)
+![image](https://user-images.githubusercontent.com/73772928/122249593-9acf2a00-cee6-11eb-83ea-b4835fb21c35.png)
+
+
+
+
+
+
+
+
+
 
 
 
