@@ -10,12 +10,19 @@ Users can also update their profile information later.
 
 ![image](https://user-images.githubusercontent.com/73772928/122248628-d289a200-cee5-11eb-9ab6-f83c6130d72d.png)
 ![image](https://user-images.githubusercontent.com/73772928/122250418-46787a00-cee7-11eb-9b18-a64874f6bff7.png)
-
 ![image](https://user-images.githubusercontent.com/73772928/122248935-11b7f300-cee6-11eb-82f4-17ced3d30bd8.png)
-
 ![image](https://user-images.githubusercontent.com/73772928/122249019-2300ff80-cee6-11eb-90ef-4009d249db91.png)
 ![image](https://user-images.githubusercontent.com/73772928/122249139-37dd9300-cee6-11eb-8651-d64b5fd65f60.png)
 ![image](https://user-images.githubusercontent.com/73772928/122249258-504dad80-cee6-11eb-948e-2bb8d4a64cce.png)
+![image](https://user-images.githubusercontent.com/73772928/122251270-f9e16e80-cee7-11eb-9f6f-b1dcb578cf9a.png)
+![image](https://user-images.githubusercontent.com/73772928/122251406-1aa9c400-cee8-11eb-82bc-bbafa846c7ce.png)
+![image](https://user-images.githubusercontent.com/73772928/122251544-3a40ec80-cee8-11eb-962e-5f324f8721a9.png)
+
+![image](https://user-images.githubusercontent.com/73772928/122251755-6ceae500-cee8-11eb-804c-e5aaa685bcad.png)
+
+
+
+
 
 
 
