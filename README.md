@@ -8,6 +8,8 @@ Lajja Palaniswamy: 101343752
 Users will be able to Sign In, Sign Out and Sign Up using their credentials(email and password).
 Users can also update their profile information later.
 
+![image](https://user-images.githubusercontent.com/73772928/122248628-d289a200-cee5-11eb-9ab6-f83c6130d72d.png)
+
 
 
 Sandra Roy Aricatt: 101353026
