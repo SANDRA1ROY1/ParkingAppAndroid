@@ -49,10 +49,20 @@ The default carplate number will be fetched from Profile Collection.
 Appropriate validations for carplatenumber, suitenumber,location is given. (hours doesnt need validationa as it is given in spinner)
 current date will be loaded every time the screen is onResume, and after each parking is added- so that no parking with same timestamp is saved to firestore.
 Users have the option to give current location or specific location they parked.
+<img width="460" alt="Add Parking" src="https://user-images.githubusercontent.com/83788153/122302218-cc88c680-cecf-11eb-8cb1-288385b4de42.png">
+<img width="460" alt="address_input" src="https://user-images.githubusercontent.com/83788153/122302276-df030000-cecf-11eb-888e-3a0a4e6632e6.png">
+<img width="460" alt="validation_addParking" src="https://user-images.githubusercontent.com/83788153/122302308-ec1fef00-cecf-11eb-8756-76686c60f349.png">
+
 
 View Parking Screen : Login screen is redirected to view parking screen(which is the other fragment  managed by tab layout)
 all the parking locations and hours will be descending sorted according to date (specific to the user) and will be listed - implemented using recyclerview.
 When a parking is added,deleted or updated, the view parking screen is updated.
+<img width="460" alt="ViewParking" src="https://user-images.githubusercontent.com/83788153/122302332-f641ed80-cecf-11eb-82ae-e114643b69b2.png">
+<img width="460" alt="updateParking" src="https://user-images.githubusercontent.com/83788153/122302362-fe9a2880-cecf-11eb-8703-c8e9a8b017e6.png">
+<img width="460" alt="displayMap" src="https://user-images.githubusercontent.com/83788153/122302384-078afa00-ced0-11eb-981a-e8b690ff9783.png">
+
+
+
 
 Update Parking: Each click on the item in view parking screen directs to update parking screen.
 all the information related to that parking is loaded from the firestore.
